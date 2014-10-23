@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /app
+
+if [ -f config/pre-service.sh ]
+then
+  source config/pre-service.sh
+fi
+
+if [ $SERVICE_MODE = "background" ]
+then
+  bundle exec bin/background
+else
+  bundle exec bin/web
+fi
