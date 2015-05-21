@@ -1,4 +1,4 @@
-FROM cxops/ruby:2.1.3
+FROM ruby:2.2.2
 
 RUN apt-get update -q && \
     apt-get install -qy nginx && \
