@@ -1,7 +1,7 @@
 FROM ruby:2.2.2
 
 RUN apt-get update -q && \
-    apt-get install -qy nginx && \
+    apt-get install -qy nginx sudo && \
     echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD app.conf /etc/nginx/sites-enabled/default
