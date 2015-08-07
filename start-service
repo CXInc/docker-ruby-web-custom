@@ -1,9 +1,19 @@
 #!/bin/bash
 cd /app
 
+# Old method: For configured images, where the pre-service script is
+# added from the ansible repo
 if [ -f config/pre-service.sh ]
 then
   source config/pre-service.sh
+fi
+
+# New method: For base images that can be run directly, since they pull
+# configs from Configaro. The pre-service script here comes from the app/service
+# git repo.
+if [ -f bin/pre-service ]
+then
+  source bin/pre-service
 fi
 
 if [ $SERVICE_MODE = "background" ]
